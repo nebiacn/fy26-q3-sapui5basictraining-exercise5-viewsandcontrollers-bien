@@ -7,22 +7,22 @@ sap.ui.define([
      */
     function (Controller, MessageToast) {
 
-    "use strict";
+        "use strict";
 
-    return Controller.extend("com.training.exer5lara.controller.MainView", {
-        onInit() {
-        },
-        onAddItem: function (){
+        return Controller.extend("com.training.exer5lara.controller.MainView", {
+            onInit() {
+            },
+            onAddItem: function () {
                 var oTextBundle = this.getOwnerComponent().getModel("i18n").getResourceBundle();
                 var sMsg = oTextBundle.getText("addButtonMsg");
                 this.fnDisplayMsg(sMsg);
             },
 
-            fnDisplayMsg: function (sMsg){
+            fnDisplayMsg: function (sMsg) {
                 MessageToast.show(sMsg);
             },
 
-        onChangeMOP: function (oEvent) {
+            onChangeMOP: function (oEvent) {
                 var sSelectedKey = oEvent.getParameter("selectedItem").getProperty("key");
                 var oMobileLabel = this.getView().byId("idLblPhone");
                 var oMobileInput = this.getView().byId("idInputPhone");
@@ -31,7 +31,7 @@ sap.ui.define([
                 var oTextBundle = this.getOwnerComponent().getModel("i18n").getResourceBundle();
                 var sMsg = "";
 
-                if (sSelectedKey === "GCASH"){
+                if (sSelectedKey === "GCASH") {
                     // show the mobile field
                     oMobileLabel.setVisible(true);
                     oMobileInput.setVisible(true);
@@ -43,7 +43,7 @@ sap.ui.define([
                     // set message toast with the selected payment method
                     sMsg = oTextBundle.getText("selGCashMsg");
                 }
-                else if (sSelectedKey === "CC"){
+                else if (sSelectedKey === "CC") {
                     // show the credit card details field
                     oCCDetailsLabel.setVisible(true);
                     oCCDetailsInput.setVisible(true);
@@ -55,7 +55,7 @@ sap.ui.define([
                     // set message toast with the selected payment method
                     sMsg = oTextBundle.getText("selCCMsg");
                 }
-                else if (sSelectedKey === "COD"){
+                else if (sSelectedKey === "COD") {
                     // hide both the mobile and credit card details fields
                     oMobileLabel.setVisible(false);
                     oMobileInput.setVisible(false);
@@ -69,17 +69,17 @@ sap.ui.define([
                 // show message toast with the selected payment method
                 MessageToast.show(sMsg);
             },
-        
-        onPressCheckout: function (){
+
+            onPressCheckout: function () {
                 var oInputFNameValue = this.getView().byId("idInptFName").getValue();
                 var oInputLNameValue = this.getView().byId("idInptLName").getValue();
                 // Check if first name or last name is blank
-                if (oInputFNameValue === "" || oInputLNameValue === ""){
+                if (oInputFNameValue === "" || oInputLNameValue === "") {
                     var oTextBundle = this.getOwnerComponent().getModel("i18n").getResourceBundle();
                     var sErrMsg = oTextBundle.getText("checkoutButtonErrMsg");
-                    sap.m.MessageToast.show(sErrMsg); 
+                    sap.m.MessageToast.show(sErrMsg);
                 }
             },
 
+        });
     });
-});
