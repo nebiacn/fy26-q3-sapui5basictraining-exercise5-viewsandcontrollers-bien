@@ -13,7 +13,9 @@ sap.ui.define([
         onInit() {
         },
         onAddItem: function (){
-                this.fnDisplayMsg("Add button pressed");
+                var oTextBundle = this.getOwnerComponent().getModel("i18n").getResourceBundle();
+                var sMsg = oTextBundle.getText("addButtonMsg");
+                this.fnDisplayMsg(sMsg);
             },
 
             fnDisplayMsg: function (sMsg){
@@ -40,7 +42,9 @@ sap.ui.define([
 
                 // Check if first name is blank
                 if (oInputFNameValue === ""){
-                    sap.m.MessageToast.show("Required Field is blank"); 
+                    var oTextBundle = this.getOwnerComponent().getModel("i18n").getResourceBundle();
+                    var sErrMsg = oTextBundle.getText("checkoutButtonErrMsg");
+                    sap.m.MessageToast.show(sErrMsg); 
                 }
             },
 
