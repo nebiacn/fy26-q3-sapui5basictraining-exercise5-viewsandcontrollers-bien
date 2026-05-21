@@ -69,7 +69,7 @@
                 <footer>
             <OverflowToolbar id="idOFTFooter">
                 <ToolbarSpacer id="idTSpacerFooter"/>
-                <Button id="idBtnCheckout" text="Check Out" tooltip="Check Out"/>
+                <Button id="idBtnCheckout" text="Check Out" tooltip="Check Out" press="onPressCheckout"/>
             </OverflowToolbar>
 </footer>
 

@@ -33,6 +33,16 @@ sap.ui.define([
                     oMobileLabel.setVisible(false);
                     oMobileInput.setVisible(false);
                 }
-            }
+            },
+        
+        onPressCheckout: function (){
+                var oInputFNameValue = this.getView().byId("idInptFName").getValue();
+
+                // Check if first name is blank
+                if (oInputFNameValue === ""){
+                    sap.m.MessageToast.show("Required Field is blank"); 
+                }
+            },
+
     });
 });
