@@ -29,7 +29,7 @@
                             <content>
                                 <Title id="idTableTitleSCart" text="Shopping Cart"/>
                                 <ToolbarSpacer id="idTSpacer"/>
-                                <Button id="idBtnAddItems" icon="sap-icon://cart-4" tooltip="Add to Cart"/>
+                                <Button id="idBtnAddItems" icon="sap-icon://cart-4" tooltip="Add to Cart" press="onAddItem"/>
                             </content>
                         </OverflowToolbar>
                     </headerToolbar>

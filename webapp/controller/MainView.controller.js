@@ -11,6 +11,14 @@ sap.ui.define([
 
     return Controller.extend("com.training.exer5lara.controller.MainView", {
         onInit() {
-        }
+        },
+        onAddItem: function (){
+                this.fnDisplayMsg("Add button pressed");
+            },
+
+            fnDisplayMsg: function (sMsg){
+                MessageToast.show(sMsg);
+            },
+
     });
 });
