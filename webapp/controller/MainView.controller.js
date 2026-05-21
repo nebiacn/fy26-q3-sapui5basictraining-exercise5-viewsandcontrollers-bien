@@ -20,5 +20,19 @@ sap.ui.define([
                 MessageToast.show(sMsg);
             },
 
+        onChangeMOP: function (oEvent) {
+                var sSelectedKey = oEvent.getParameter("selectedItem").getProperty("key");
+                var oMobileLabel = this.getView().byId("idLblPhone");
+                var oMobileInput = this.getView().byId("idInputPhone");
+
+                if (sSelectedKey === "GCASH"){
+                    // show the mobile field
+                    oMobileLabel.setVisible(true);
+                    oMobileInput.setVisible(true);
+                } else {
+                    oMobileLabel.setVisible(false);
+                    oMobileInput.setVisible(false);
+                }
+            }
     });
 });

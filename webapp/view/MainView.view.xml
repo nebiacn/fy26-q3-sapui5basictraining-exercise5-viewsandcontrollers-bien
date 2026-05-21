@@ -13,17 +13,19 @@
                         <Label id="idLblLName" text="Last Name" />
                         <Input id="idInptLName" value="" />
                         <Label id="idLblMOP" text="Mode of Payment" />
-                        <Select id="idSelMOP" forceSelection="false">
+                        <Select id="idSelMOP" forceSelection="false" change="onChangeMOP">
                             <items>
                                 <core:Item id="idItmCOD" text="Cash on Delivery" key="COD"/>
                                 <core:Item id="idItmCC" text="Credit Card" key="CC"/>
                                 <core:Item id="idItmGCash" text="GCash" key="GCASH"/>
                             </items>
                         </Select>
+                        <Label id="idLblPhone" text="Mobile Number" visible="false"/>
+                        <Input id="idInputPhone" value="" visible="false"/>
                     </f:content>
                 </f:SimpleForm>
-            </VBox>
-<Table id="idTableSCart" inset="false">
+
+                <Table id="idTableSCart" inset="false">
                     <headerToolbar>
                         <OverflowToolbar id="idOFT">
                             <content>
@@ -61,6 +63,9 @@
                         </ColumnListItem>
                     </items>
                 </Table>
+            </VBox>
+
+
                 <footer>
             <OverflowToolbar id="idOFTFooter">
                 <ToolbarSpacer id="idTSpacerFooter"/>
