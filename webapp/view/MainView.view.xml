@@ -22,6 +22,8 @@
                         </Select>
                         <Label id="idLblPhone" text="{i18n>mobileNumberLbl}" visible="false"/>
                         <Input id="idInputPhone" value="" visible="false"/>
+                        <Label id="idLblCCDetails" text="{i18n>ccDetailsLbl}" visible="false"/>
+                        <Input id="idInputCCDetails" value="" visible="false"/>
                     </f:content>
                 </f:SimpleForm>
 
